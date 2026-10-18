@@ -3,52 +3,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Exam</title>
+    <title>B1 English Exam</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
-        .section { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .question { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
-        button { background-color: #3498db; border: none; color: white; padding: 8px 15px; border-radius: 4px; cursor: pointer; }
-        button:disabled { opacity: 0.6; cursor: default; }
-        input[type="text"] { padding: 8px; width: 80%; }
-        .feedback { display: none; margin-top: 10px; padding: 10px; border-radius: 4px; }
-        .success { background-color: #d4edda; color: #155724; display: block; }
-        .error { background-color: #f8d7da; color: #721c24; display: block; }
-        .correct-btn { background-color: #28a745 !important; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
+        h1, h2, h3 { color: #2c3e50; text-align: center; }
+        .section { background-color: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        .story-box { background-color: #e8f5e9; padding: 20px; border-radius: 8px; margin-bottom: 25px; font-style: italic; border-left: 5px solid #4caf50; }
+        .question { background-color: #f9f9f9; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 20px; }
+        .question p { margin-top: 0; font-size: 1.1em; }
+        button { background-color: #3498db; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1em; }
+        button:hover:not(:disabled) { background-color: #2980b9; }
+        button:disabled { cursor: default; opacity: 0.7; }
+        input[type="text"] { padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px; width: calc(100% - 22px); margin-bottom: 10px; }
+        .feedback { display: none; margin-top: 15px; padding: 15px; border-radius: 5px; }
+        .feedback.show { display: block; }
+        .feedback.success { background-color: #d4edda; color: #155724; border-left: 5px solid #28a745; }
+        .feedback.error { background-color: #f8d7da; color: #721c24; border-left: 5px solid #dc3545; }
+        .correct-text { font-weight: bold; color: #2e7d32; }
         .incorrect-btn { background-color: #dc3545 !important; }
-        #score-board { text-align: center; font-size: 1.5em; margin-top: 20px; display: none; }
+        .correct-btn { background-color: #28a745 !important; }
+        #score-board { text-align: center; font-size: 1.8em; margin-top: 40px; padding: 20px; background-color: #2c3e50; color: white; border-radius: 8px; display: none; }
     </style>
 </head>
 <body>
 
-<h1>Test Exam</h1>
+<h1>B1 English Exam</h1>
 
-<div class="section">
-    <h2>Part 1: Multiple Choice</h2>
+<!-- Part 1 -->
+<div class="section" id="part1">
+    <h2>Part 1: Vocabulary & Grammar</h2>
     
-    <div class="question" id="q1" data-correct="B" data-explanation="Passive voice: was demolished.">
-        <p><strong>1. The old hospital _______ last year.</strong></p>
+    <div class="question" id="q1" data-correct="B" data-explanation="Past simple passive: was/were + past participle. 'The old hospital' is singular -> was demolished.">
+        <p><strong>1. The old hospital _______ last year to make space for a new park.</strong></p>
         <button onclick="checkMCQ(1, 'A')">A) were demolished</button>
         <button onclick="checkMCQ(1, 'B')">B) was demolished</button>
+        <button onclick="checkMCQ(1, 'C')">C) has been demolished</button>
         <div id="feedback-1" class="feedback"></div>
     </div>
 
-    <div class="question" id="q2" data-correct="A" data-explanation="Reported speech: had finished.">
-        <p><strong>2. Sarah said that she _______ her project.</strong></p>
+    <div class="question" id="q2" data-correct="A" data-explanation="Reported speech: 'have finished' (present perfect) changes to 'had finished' (past perfect).">
+        <p><strong>2. 'I have finished my project,' said Sarah. -> Sarah said that she _______ her project.</strong></p>
         <button onclick="checkMCQ(2, 'A')">A) had finished</button>
         <button onclick="checkMCQ(2, 'B')">B) has finished</button>
+        <button onclick="checkMCQ(2, 'C')">C) finished</button>
         <div id="feedback-2" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q3" data-correct="B" data-explanation="'It is important to + infinitive' is the correct structure.">
+        <p><strong>3. _______ a balanced diet to maintain good health.</strong></p>
+        <button onclick="checkMCQ(3, 'A')">A) It's important eat</button>
+        <button onclick="checkMCQ(3, 'B')">B) It's important to eat</button>
+        <button onclick="checkMCQ(3, 'C')">C) It important to eat</button>
+        <div id="feedback-3" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q4" data-correct="B" data-explanation="'Dizzy' is an adjective meaning a sensation of spinning around and losing balance.">
+        <p><strong>4. When I stood up too quickly, I felt _______ and had to sit down again.</strong></p>
+        <button onclick="checkMCQ(4, 'A')">A) allergic</button>
+        <button onclick="checkMCQ(4, 'B')">B) dizzy</button>
+        <button onclick="checkMCQ(4, 'C')">C) swollen</button>
+        <div id="feedback-4" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q5" data-correct="B" data-explanation="'Used to + infinitive' refers to past habits that are no longer true.">
+        <p><strong>5. My grandfather _______ every morning, but he doesn't anymore.</strong></p>
+        <button onclick="checkMCQ(5, 'A')">A) used to jogging</button>
+        <button onclick="checkMCQ(5, 'B')">B) used to jog</button>
+        <button onclick="checkMCQ(5, 'C')">C) uses to jog</button>
+        <div id="feedback-5" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q6" data-correct="B" data-explanation="Passive voice: 'students' is plural, so it requires 'were told'.">
+        <p><strong>6. The students _______ to wait outside the classroom.</strong></p>
+        <button onclick="checkMCQ(6, 'A')">A) was told</button>
+        <button onclick="checkMCQ(6, 'B')">B) were told</button>
+        <button onclick="checkMCQ(6, 'C')">C) been told</button>
+        <div id="feedback-6" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q7" data-correct="A" data-explanation="Past simple changes to past perfect in reported speech: 'bought' -> 'had bought'.">
+        <p><strong>7. 'I bought a new car,' said Tom. -> Tom said that he _______ a new car.</strong></p>
+        <button onclick="checkMCQ(7, 'A')">A) had bought</button>
+        <button onclick="checkMCQ(7, 'B')">B) bought</button>
+        <button onclick="checkMCQ(7, 'C')">C) has bought</button>
+        <div id="feedback-7" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q8" data-correct="C" data-explanation="'It's essential to follow' uses the structure It + be + adjective + to-infinitive.">
+        <p><strong>8. _______ the doctor's instructions carefully.</strong></p>
+        <button onclick="checkMCQ(8, 'A')">A) It essential to follow</button>
+        <button onclick="checkMCQ(8, 'B')">B) It's essential follow</button>
+        <button onclick="checkMCQ(8, 'C')">C) It's essential to follow</button>
+        <div id="feedback-8" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q9" data-correct="A" data-explanation="'Allergic to' is the correct preposition and context for reacting to nuts.">
+        <p><strong>9. He is _______ to nuts, so he must be very careful with food.</strong></p>
+        <button onclick="checkMCQ(9, 'A')">A) allergic</button>
+        <button onclick="checkMCQ(9, 'B')">B) dizzy</button>
+        <button onclick="checkMCQ(9, 'C')">C) swollen</button>
+        <div id="feedback-9" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q10" data-correct="B" data-explanation="Negative form of used to is 'didn't use to' + infinitive.">
+        <p><strong>10. We _______ like vegetables when we were children, but now we love them.</strong></p>
+        <button onclick="checkMCQ(10, 'A')">A) not used to</button>
+        <button onclick="checkMCQ(10, 'B')">B) didn't use to</button>
+        <button onclick="checkMCQ(10, 'C')">C) usedn't to</button>
+        <div id="feedback-10" class="feedback"></div>
     </div>
 </div>
 
-<div class="section">
-    <h2>Part 2: Short Answer</h2>
-    
-    <div class="question" id="q3" data-correct="a balanced diet is best" data-explanation="The answer is 'a balanced diet is best'.">
-        <p><strong>3. What is the best way to maintain a healthy lifestyle?</strong></p>
-        <input type="text" id="q3-answer" placeholder="Type your answer here">
-        <button id="btn-3" onclick="checkShortAnswer(3, 'a balanced diet is best')">Check Answer</button>
-        <div id="feedback-3" class="feedback"></div>
+<!-- Part 2 -->
+<div class="section" id="part2">
+    <h2>Part 2: Reading Comprehension</h2>
+    <div class="story-box">
+        Last year, Maria realized that her sedentary lifestyle was affecting her health. She used to spend all her free time watching television and eating processed foods. After consulting with a doctor, she decided to make significant changes. Now, Maria follows a balanced diet rich in vegetables and lean proteins. She also attends yoga classes three times a week. Maria says that she feels much more energetic and her sleep quality has improved dramatically. Her doctor confirmed that making small changes for a healthier life was the best decision she could have made.
+    </div>
+
+    <div class="question" id="q11" data-correct="False" data-explanation="The text states she had a sedentary lifestyle and spent all free time watching TV.">
+        <p><strong>11. Maria was very active and played sports before her changes.</strong></p>
+        <button onclick="checkMCQ(11, 'True')">True</button>
+        <button onclick="checkMCQ(11, 'False')">False</button>
+        <button onclick="checkMCQ(11, 'Not Given')">Not Given</button>
+        <div id="feedback-11" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q12" data-correct="Not Given" data-explanation="The text mentions she consulted a doctor, but does not mention her friends.">
+        <p><strong>12. Maria's friends forced her to start exercising.</strong></p>
+        <button onclick="checkMCQ(12, 'True')">True</button>
+        <button onclick="checkMCQ(12, 'False')">False</button>
+        <button onclick="checkMCQ(12, 'Not Given')">Not Given</button>
+        <div id="feedback-12" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q13" data-correct="True" data-explanation="The text states she follows a diet rich in vegetables and lean proteins.">
+        <p><strong>13. Maria's current diet includes vegetables and lean proteins.</strong></p>
+        <button onclick="checkMCQ(13, 'True')">True</button>
+        <button onclick="checkMCQ(13, 'False')">False</button>
+        <button onclick="checkMCQ(13, 'Not Given')">Not Given</button>
+        <div id="feedback-13" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q14" data-correct="True" data-explanation="The passage states she attends yoga classes three times a week.">
+        <p><strong>14. Maria attends yoga classes three times a week.</strong></p>
+        <button onclick="checkMCQ(14, 'True')">True</button>
+        <button onclick="checkMCQ(14, 'False')">False</button>
+        <button onclick="checkMCQ(14, 'Not Given')">Not Given</button>
+        <div id="feedback-14" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q15" data-correct="False" data-explanation="The text states she feels much more energetic, not fatigued.">
+        <p><strong>15. Maria experiences constant fatigue since changing her habits.</strong></p>
+        <button onclick="checkMCQ(15, 'True')">True</button>
+        <button onclick="checkMCQ(15, 'False')">False</button>
+        <button onclick="checkMCQ(15, 'Not Given')">Not Given</button>
+        <div id="feedback-15" class="feedback"></div>
+    </div>
+</div>
+
+<!-- Part 3 -->
+<div class="section" id="part3">
+    <h2>Part 3: Listening & Answering</h2>
+    <p><em>Listen to the audio and answer the questions.</em></p>
+
+    <div class="question" id="q16" data-correct="A" data-explanation="Passive voice: 'A new hospital is being constructed.'">
+        <p><strong>16. What is currently being built in the city center?</strong></p>
+        <button onclick="checkMCQ(16, 'A')">A) A new hospital is being constructed</button>
+        <button onclick="checkMCQ(16, 'B')">B) A new school was built</button>
+        <button onclick="checkMCQ(16, 'C')">C) A shopping mall will be built</button>
+        <div id="feedback-16" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q17" data-correct="B" data-explanation="Reported speech: 'The doctor advised him to rest.'">
+        <p><strong>17. What advice did the doctor give him?</strong></p>
+        <button onclick="checkMCQ(17, 'A')">A) The doctor said he must work hard</button>
+        <button onclick="checkMCQ(17, 'B')">B) The doctor advised him to rest</button>
+        <button onclick="checkMCQ(17, 'C')">C) The doctor told him to exercise more</button>
+        <div id="feedback-17" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q18" data-correct="A" data-explanation="Reported speech: 'Maria said that she was attending yoga classes.'">
+        <p><strong>18. What did Maria say about her routine?</strong></p>
+        <button onclick="checkMCQ(18, 'A')">A) Maria said she is attending yoga classes</button>
+        <button onclick="checkMCQ(18, 'B')">B) Maria said she was attending yoga classes</button>
+        <button onclick="checkMCQ(18, 'C')">C) Maria said she attends yoga classes</button>
+        <div id="feedback-18" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q19" data-correct="A" data-explanation="Correct use of 'It's good to eat a balanced diet.'">
+        <p><strong>19. Choose the best way to give health advice:</strong></p>
+        <button onclick="checkMCQ(19, 'A')">A) It's good to eat a balanced diet</button>
+        <button onclick="checkMCQ(19, 'B')">B) It good eat a balanced diet</button>
+        <button onclick="checkMCQ(19, 'C')">C) It's good eating a balanced diet</button>
+        <div id="feedback-19" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q20" data-correct="B" data-explanation="Identification of past habit: 'She started eating a diet rich in vegetables.'">
+        <p><strong>20. How would you answer: 'What did Maria make to her diet?'</strong></p>
+        <button onclick="checkMCQ(20, 'A')">A) She stopped eating vegetables completely</button>
+        <button onclick="checkMCQ(20, 'B')">B) She started eating a diet rich in vegetables</button>
+        <button onclick="checkMCQ(20, 'C')">C) She only eats fast food now</button>
+        <div id="feedback-20" class="feedback"></div>
+    </div>
+</div>
+
+<!-- Part 4 -->
+<div class="section" id="part4">
+    <h2>Part 4: Short Answers (Passive Voice)</h2>
+    <p><em>Rewrite or answer using the passive voice where indicated.</em></p>
+
+    <div class="question" id="q21" data-correct="The old hospital was demolished" data-explanation="Passive simple past: Subject + was/were + past participle.">
+        <p><strong>21. What was done to the old hospital last year?</strong></p>
+        <input type="text" id="q21-answer" placeholder="Type your answer here">
+        <button id="btn-21" onclick="checkShortAnswer(21, 'The old hospital was demolished')">Check Answer</button>
+        <div id="feedback-21" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q22" data-correct="The students were told to wait outside" data-explanation="Passive voice: 'were told' + infinitive.">
+        <p><strong>22. What instructions were given to the students?</strong></p>
+        <input type="text" id="q22-answer" placeholder="Type your answer here">
+        <button id="btn-22" onclick="checkShortAnswer(22, 'The students were told to wait outside')">Check Answer</button>
+        <div id="feedback-22" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q23" data-correct="A new park was created" data-explanation="Passive past: 'was created'.">
+        <p><strong>23. What was created to replace the hospital?</strong></p>
+        <input type="text" id="q23-answer" placeholder="Type your answer here">
+        <button id="btn-23" onclick="checkShortAnswer(23, 'A new park was created')">Check Answer</button>
+        <div id="feedback-23" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q24" data-correct="He used to play tennis" data-explanation="Used to + verb base form.">
+        <p><strong>24. Describe what your grandfather used to do.</strong></p>
+        <input type="text" id="q24-answer" placeholder="Type your answer here">
+        <button id="btn-24" onclick="checkShortAnswer(24, 'He used to play tennis')">Check Answer</button>
+        <div id="feedback-24" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q25" data-correct="A balanced diet is best" data-explanation="The answer must incorporate health vocabulary.">
+        <p><strong>25. What is the best way to maintain a healthy lifestyle?</strong></p>
+        <input type="text" id="q25-answer" placeholder="Type your answer here">
+        <button id="btn-25" onclick="checkShortAnswer(25, 'A balanced diet is best')">Check Answer</button>
+        <div id="feedback-25" class="feedback"></div>
+    </div>
+</div>
+
+<!-- Part 5 -->
+<div class="section" id="part5">
+    <h2>Part 5: Reported Speech</h2>
+    <p><em>Rewrite the following sentences in reported speech.</em></p>
+
+    <div class="question" id="q26" data-correct="Maria said that she ate a balanced diet every day" data-explanation="Present simple changes to past simple.">
+        <p><strong>26. 'I eat a balanced diet every day,' said Maria.</strong></p>
+        <input type="text" id="q26-answer" placeholder="Type your answer here">
+        <button id="btn-26" onclick="checkShortAnswer(26, 'Maria said that she ate a balanced diet every day')">Check Answer</button>
+        <div id="feedback-26" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q27" data-correct="Maria told me that she was feeling much more energetic" data-explanation="Present continuous changes to past continuous.">
+        <p><strong>27. 'I am feeling much more energetic,' Maria told me.</strong></p>
+        <input type="text" id="q27-answer" placeholder="Type your answer here">
+        <button id="btn-27" onclick="checkShortAnswer(27, 'Maria told me that she was feeling much more energetic')">Check Answer</button>
+        <div id="feedback-27" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q28" data-correct="Maria said the doctor had advised her to make some changes" data-explanation="Past simple changes to past perfect.">
+        <p><strong>28. 'The doctor advised me to make some changes,' said Maria.</strong></p>
+        <input type="text" id="q28-answer" placeholder="Type your answer here">
+        <button id="btn-28" onclick="checkShortAnswer(28, 'Maria said the doctor had advised her to make some changes')">Check Answer</button>
+        <div id="feedback-28" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q29" data-correct="Maria stated that she would continue attending yoga classes" data-explanation="'will' changes to 'would'.">
+        <p><strong>29. 'I will continue attending yoga classes,' Maria stated.</strong></p>
+        <input type="text" id="q29-answer" placeholder="Type your answer here">
+        <button id="btn-29" onclick="checkShortAnswer(29, 'Maria stated that she would continue attending yoga classes')">Check Answer</button>
+        <div id="feedback-29" class="feedback"></div>
+    </div>
+
+    <div class="question" id="q30" data-correct="The doctor confirmed that small changes were the best decision" data-explanation="'was/is' changes to past tense.">
+        <p><strong>30. 'Small changes are the best decision,' the doctor confirmed.</strong></p>
+        <input type="text" id="q30-answer" placeholder="Type your answer here">
+        <button id="btn-30" onclick="checkShortAnswer(30, 'The doctor confirmed that small changes were the best decision')">Check Answer</button>
+        <div id="feedback-30" class="feedback"></div>
     </div>
 </div>
 
@@ -56,7 +294,7 @@
 
 <script>
     const userScores = {};
-    const totalQuestions = 3;
+    const totalQuestions = 30;
 
     function updateScore(questionNumber, isCorrect) {
         userScores[questionNumber] = isCorrect ? 1 : 0;
@@ -76,53 +314,6 @@
     function processFeedback(questionNumber, isCorrect, explanation) {
         const feedbackDiv = document.getElementById(`feedback-${questionNumber}`);
         feedbackDiv.innerHTML = isCorrect
-            ? `<strong>Correct!</strong> ${explanation}`
-            : `<strong>Incorrect.</strong> ${explanation}`;
-        feedbackDiv.className = `feedback ${isCorrect ? 'success' : 'error'}`;
-        updateScore(questionNumber, isCorrect);
-    }
-
-    function checkMCQ(questionNumber, selected) {
-        const questionDiv = document.getElementById(`q${questionNumber}`);
-        const correct = questionDiv.getAttribute('data-correct');
-        const explanation = questionDiv.getAttribute('data-explanation');
-        const buttons = questionDiv.querySelectorAll('button');
-
-        buttons.forEach(btn => {
-            btn.disabled = true;
-            const btnText = btn.innerText;
-            if (btnText.startsWith(selected + ')')) {
-                if (selected === correct) {
-                    btn.classList.add('correct-btn');
-                } else {
-                    btn.classList.add('incorrect-btn');
-                }
-            } else if (btnText.startsWith(correct + ')')) {
-                btn.classList.add('correct-btn');
-            }
-        });
-
-        const isCorrect = (selected === correct);
-        processFeedback(questionNumber, isCorrect, explanation);
-    }
-
-    function checkShortAnswer(questionNumber, correctText) {
-        const input = document.getElementById(`q${questionNumber}-answer`);
-        const questionDiv = document.getElementById(`q${questionNumber}`);
-        const explanation = questionDiv.getAttribute('data-explanation');
-
-        const userAnswer = input.value.trim().toLowerCase();
-        const cleanCorrect = correctText.trim().toLowerCase();
-
-        const isCorrect = (userAnswer === cleanCorrect);
-
-        input.disabled = true;
-        const btn = document.getElementById(`btn-${questionNumber}`);
-        if (btn) btn.disabled = true;
-
-        processFeedback(questionNumber, isCorrect, explanation);
-    }
-</script>
-
-</body>
-</html>
+            ? `<span class="correct-text">Correct!</span><br>${explanation}`
+            : `<span class="incorrect-text">Incorrect.</span><br>${explanation}`;
+        feedbackD

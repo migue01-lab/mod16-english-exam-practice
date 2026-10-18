@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B1 English Exam</title
+    <title>B1 English Exam</title>
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
         h1, h2, h3 { color: #2c3e50; text-align: center; }
@@ -52,7 +49,7 @@
             <div id="feedback-2" class="feedback"></div>
         </div>
         
-        <div class="question" id="q3" data-correct="B" data-explanation="Fixed the grammar to ensure the sentence is correct: 'It's important to eat a balanced diet to maintain good health.'">
+        <div class="question" id="q3" data-correct="B" data-explanation="Fixed grammar: 'It's important to eat a balanced diet to maintain good health.'">
             <p><strong>3. ________ a balanced diet to maintain good health.</strong></p>
             <button onclick="checkMCQ(3, 'A')">A) It's important eat</button>
             <button onclick="checkMCQ(3, 'B')">B) It's important to eat</button>
@@ -92,8 +89,7 @@
             <div id="feedback-7" class="feedback"></div>
         </div>
         
-        <div class="question" id="q8" data-correct="C" data-explanation="'It's essential to follow' is the correct reporting structure.">
-            <p><strong>8. ________ doctor's instructions carefully.</strong></p>
+        <div class="question" id="q8" data-correct="C" data-explanation="'It's essential to follow' is the correct reporting structure.</strong></p>
             <button onclick="checkMCQ(8, 'A')">A) It essential to follow</button>
             <button onclick="checkMCQ(8, 'B')">B) It's essential follow</button>
             <button onclick="checkMCQ(8, 'C')">C) It's essential to follow</button>
@@ -283,99 +279,4 @@
             <div id="feedback-28" class="feedback"></div>
         </div>
 
-        <div class="question" id="q29" data-correct="Maria stated that she would continue attending yoga classes" data-explanation="The future tense with 'will' becomes 'would' in reported speech.">
-            <p><strong>29. "I will continue attending yoga classes," Maria stated.</strong></p>
-            <input type="text" id="q29-answer" placeholder="Type your answer here">
-            <button id="btn-29" onclick="checkShortAnswer(29, 'Maria stated that she would continue attending yoga classes')">Check Answer</button>
-            <div id="feedback-29" class="feedback"></div>
-        </div>
-
-        <div class="question" id="q30" data-correct="Maria confessed that she used to watch television all the time" data-explanation="'Used to' remains the same in reported speech.">
-            <p><strong>30. "I used to watch television all the time," Maria confessed.</strong></p>
-            <input type="text" id="q30-answer" placeholder="Type your answer here">
-            <button id="btn-30" onclick="checkShortAnswer(30, 'Maria confessed that she used to watch television all the time')">Check Answer</button>
-            <div id="feedback-30" class="feedback"></div>
-        </div>
-    </div>
-
-    <div id="score-board"></div>
-
-    <script>
-        let scores = {
-            1: null, 2: null, 3: null, 4: null, 5: null, 
-            6: null, 7: null, 8: null, 9: null, 10: null,
-            11: null, 12: null, 13: null, 14: null, 15: null,
-            16: null, 17: null, 18: null, 19: null, 20: null,
-            21: null, 22: null, 23: null, 24: null, 25: null,
-            26: null, 27: null, 28: null, 29: null, 30: null
-        };
-        const totalQuestions = 30;
-
-        function updateScore(qNumber, isCorrect) {
-            scores[qNumber] = isCorrect ? 1 : 0;
-            const answeredCount = Object.values(scores).filter(val => val !== null).length;
-            if (answeredCount === totalQuestions) {
-                calculateTotalScore();
-            }
-        }
-
-        function calculateTotalScore() {
-            const totalScore = Object.values(scores).reduce((acc, val) => acc + val, 0);
-            const scoreBoard = document.getElementById('score-board');
-            scoreBoard.innerHTML = `Your Final Score: ${totalScore} out of ${totalQuestions}`;
-            scoreBoard.style.display = 'block';
-        }
-
-        function processFeedback(questionNumber, isCorrect, correctText, explanation, feedbackDiv) {
-            feedbackDiv.innerHTML = isCorrect 
-                ? '<span class="correct-text">Correct!</span>'
-                : `<span class="incorrect-text">Incorrect.</span>`;
-            if (!isCorrect) {
-                 feedbackDiv.innerHTML += ` <br><strong>Expected:</strong> ${correctText}`;
-            }
-            feedbackDiv.innerHTML += `<br><br><strong>Explanation:</strong> ${explanation}`;
-            feedbackDiv.className = `feedback show ${isCorrect ? 'success' : 'error'}`;
-
-            updateScore(questionNumber, isCorrect);
-        }
-
-        function checkMCQ(questionNumber, selected) {
-            const questionDiv = document.getElementById('q' + questionNumber);
-            const correct = questionDiv.getAttribute('data-correct');
-            const explanation = questionDiv.getAttribute('data-explanation');
-            const feedbackDiv = document.getElementById('feedback-' + questionNumber);
-            const isCorrect = (selected === correct);
-
-            processFeedback(questionNumber, isCorrect, correct, explanation, feedbackDiv);
-
-            const buttons = questionDiv.querySelectorAll('button');
-            buttons.forEach(btn => {
-                btn.disabled = true;
-                const btnText = btn.innerText;
-                // Check if the button text is the correct answer
-                if (btnText === correct || btnText.substring(3) === correct) {
-                    btn.classList.add('correct-btn');
-                } else if (btnText === selected && !isCorrect) {
-                    btn.classList.add('incorrect-btn');
-                } else if (btnText.substring(3) === selected && !isCorrect) {
-                    btn.classList.add('incorrect-btn');
-                }
-            });
-        }
-
-        function checkShortAnswer(questionNumber, correctText) {
-            const input = document.getElementById(`q${questionNumber}-answer`).value.trim();
-            const questionDiv = document.getElementById('q' + questionNumber);
-            const explanation = questionDiv.getAttribute('data-explanation');
-            const feedbackDiv = document.getElementById('feedback-' + questionNumber);
-
-            const isCorrect = (input.toLowerCase() === correctText.toLowerCase());
-
-            processFeedback(questionNumber, isCorrect, correctText, explanation, feedbackDiv);
-
-            document.getElementById(`q${questionNumber}-answer`).disabled = true;
-            document.getElementById(`btn-${questionNumber}`).disabled = true;
-        }
-    </script>
-</body>
-</html>
+        <div class="question" id="q29" data-correct="Maria stated that she would continue attending yoga classes" data-ex

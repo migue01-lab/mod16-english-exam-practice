@@ -316,4 +316,50 @@
         feedbackDiv.innerHTML = isCorrect
             ? `<span class="correct-text">Correct!</span><br>${explanation}`
             : `<span class="incorrect-text">Incorrect.</span><br>${explanation}`;
-        feedbackD
+        feedbackDiv.innerHTML = isCorrect
+            ? `<span class="correct-text">Correct!</span><br>${explanation}`
+            : `<span class="incorrect-text">Incorrect.</span><br>${explanation}`;
+        feedbackDiv.className = `feedback show ${isCorrect ? 'success' : 'error'}`;
+        updateScore(questionNumber, isCorrect);
+    }
+
+    function checkMCQ(questionNumber, selected) {
+        const questionDiv = document.getElementById(`q${questionNumber}`);
+        const correct = questionDiv.getAttribute('data-correct');
+        const explanation = questionDiv.getAttribute('data-explanation');
+        const buttons = questionDiv.querySelectorAll('button');
+
+        buttons.forEach(btn => {
+            btn.disabled = true;
+            const btnText = btn.innerText;
+            if (btnText.startsWith(correct + ')') || btnText === correct) {
+                btn.classList.add('correct-btn');
+            } else if (btnText.startsWith(selected + ')') || btnText === selected) {
+                btn.classList.add('incorrect-btn');
+            }
+        });
+
+        const isCorrect = (selected === correct);
+        processFeedback(questionNumber, isCorrect, explanation);
+    }
+
+    function checkShortAnswer(questionNumber, correctText) {
+        const input = document.getElementById(`q${questionNumber}-answer`);
+        const questionDiv = document.getElementById(`q${questionNumber}`);
+        const explanation = questionDiv.getAttribute('data-explanation');
+
+        const userAnswer = input.value.trim().toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_~()]/g, "");
+        const cleanCorrect = correctText.trim().toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_~()]/g, "");
+
+        const isCorrect = (userAnswer === cleanCorrect);
+
+        input.disabled = true;
+        const btn = document.getElementById(`btn-${questionNumber}`);
+        if (btn) btn.disabled = true;
+
+        processFeedback(questionNumber, isCorrect, explanation);
+    }
+</script>
+
+</body>
+</html

@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    ```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B1 English Exam</title>
+    <title>B1 English Exam</title
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
-        h1, h2 { color: #2c3e50; text-align: center; }
+        h1, h2, h3 { color: #2c3e50; text-align: center; }
         .section { background-color: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 30px; }
         .story-box { background-color: #e8f5e9; padding: 20px; border-radius: 8px; margin-bottom: 25px; font-style: italic; border-left: 5px solid #4caf50; }
         .question { background-color: #f9f9f9; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 20px; }
@@ -49,11 +53,11 @@
             <div id="feedback-2" class="feedback"></div>
         </div>
         
-        <div class="question" id="q3" data-correct="C" data-explanation="The correct structure is 'It's + adjective + infinitive'.">
-            <p><strong>3. ________ a balanced diet is essential for maintaining good health.</strong></p>
+        <div class="question" id="q3" data-correct="B" data-explanation="Fixed the grammar to ensure the sentence is correct: 'It's important to eat a balanced diet to maintain good health.'">
+            <p><strong>3. ________ a balanced diet to maintain good health.</strong></p>
             <button onclick="checkMCQ(3, 'A')">A) It's important eat</button>
-            <button onclick="checkMCQ(3, 'B')">B) It important to eat</button>
-            <button onclick="checkMCQ(3, 'C')">C) It's important to eat</button>
+            <button onclick="checkMCQ(3, 'B')">B) It's important to eat</button>
+            <button onclick="checkMCQ(3, 'C')">C) It important to eat</button>
             <div id="feedback-3" class="feedback"></div>
         </div>
         
@@ -117,60 +121,61 @@
     <!-- Part 2 -->
     <div class="section" id="part2">
         <h2>Part 2: Reading Comprehension</h2>
+        <p><em>Instructions: Read the story and decide if the statements are True, False, or Not Given.</em></p>
         <div class="story-box">
             <p>Last year, Maria realized that her sedentary lifestyle was affecting her health. She used to spend all her free time watching television and eating processed foods. After consulting with a doctor, she decided to make significant changes. Now, Maria follows a balanced diet rich in vegetables and lean proteins. She also attends yoga classes three times a week. Maria says that she feels much more energetic and her sleep quality has improved dramatically. She encourages everyone to start making small changes for a healthier life.</p>
         </div>
         
-        <div class="question" id="q11" data-correct="B" data-explanation="The text states Maria used to spend all her free time watching television and eating processed foods.">
-            <p><strong>11. What was Maria's lifestyle like before her changes?</strong></p>
-            <button onclick="checkMCQ(11, 'A')">A) She was very active and played sports.</button>
-            <button onclick="checkMCQ(11, 'B')">B) She was sedentary and had poor eating habits.</button>
-            <button onclick="checkMCQ(11, 'C')">C) She was a professional yoga instructor.</button>
+        <div class="question" id="q11" data-correct="False" data-explanation="The text states Maria used to spend all her free time watching television and eating processed foods, not playing sports.">
+            <p><strong>11. Maria was very active and played sports before her changes.</strong></p>
+            <button onclick="checkMCQ(11, 'True')">True</button>
+            <button onclick="checkMCQ(11, 'False')">False</button>
+            <button onclick="checkMCQ(11, 'Not Given')">Not Given</button>
             <div id="feedback-11" class="feedback"></div>
         </div>
         
-        <div class="question" id="q12" data-correct="C" data-explanation="The text notes she decided to change after consulting with a doctor.">
-            <p><strong>12. Why did Maria decide to change her lifestyle?</strong></p>
-            <button onclick="checkMCQ(12, 'A')">A) Her friends forced her to start exercising.</button>
-            <button onclick="checkMCQ(12, 'B')">B) She wanted to become a professional athlete.</button>
-            <button onclick="checkMCQ(12, 'C')">C) Her sedentary lifestyle was affecting her health.</button>
+        <div class="question" id="q12" data-correct="Not Given" data-explanation="The text mentions she consulted a doctor, but it doesn't mention her friends' involvement.">
+            <p><strong>12. Maria’s friends forced her to start exercising.</strong></p>
+            <button onclick="checkMCQ(12, 'True')">True</button>
+            <button onclick="checkMCQ(12, 'False')">False</button>
+            <button onclick="checkMCQ(12, 'Not Given')">Not Given</button>
             <div id="feedback-12" class="feedback"></div>
         </div>
         
-        <div class="question" id="q13" data-correct="A" data-explanation="The text explicitly mentions she now eats a diet rich in vegetables and lean proteins.">
-            <p><strong>13. Which of the following is true about Maria's current diet?</strong></p>
-            <button onclick="checkMCQ(13, 'A')">A) It includes vegetables and lean proteins.</button>
-            <button onclick="checkMCQ(13, 'B')">B) She only eats processed foods.</button>
-            <button onclick="checkMCQ(13, 'C')">C) She has eliminated all proteins from her meals.</button>
+        <div class="question" id="q13" data-correct="True" data-explanation="The text explicitly mentions she now eats a diet rich in vegetables and lean proteins.">
+            <p><strong>13. Maria’s current diet includes vegetables and lean proteins.</strong></p>
+            <button onclick="checkMCQ(13, 'True')">True</button>
+            <button onclick="checkMCQ(13, 'False')">False</button>
+            <button onclick="checkMCQ(13, 'Not Given')">Not Given</button>
             <div id="feedback-13" class="feedback"></div>
         </div>
         
-        <div class="question" id="q14" data-correct="B" data-explanation="The passage states she attends yoga classes three times a week.">
-            <p><strong>14. How often does Maria attend yoga classes?</strong></p>
-            <button onclick="checkMCQ(14, 'A')">A) Every single day.</button>
-            <button onclick="checkMCQ(14, 'B')">B) Three times a week.</button>
-            <button onclick="checkMCQ(14, 'C')">C) Only once a month.</button>
+        <div class="question" id="q14" data-correct="True" data-explanation="The passage states she attends yoga classes three times a week.">
+            <p><strong>14. Maria attends yoga classes three times a week.</strong></p>
+            <button onclick="checkMCQ(14, 'True')">True</button>
+            <button onclick="checkMCQ(14, 'False')">False</button>
+            <button onclick="checkMCQ(14, 'Not Given')">Not Given</button>
             <div id="feedback-14" class="feedback"></div>
         </div>
         
-        <div class="question" id="q15" data-correct="A" data-explanation="The text mentions she feels much more energetic and her sleep quality has improved.">
-            <p><strong>15. What are the benefits Maria has experienced since changing her habits?</strong></p>
-            <button onclick="checkMCQ(15, 'A')">A) More energy and better sleep quality.</button>
-            <button onclick="checkMCQ(15, 'B')">B) More free time to watch television.</button>
-            <button onclick="checkMCQ(15, 'C')">C) Weight gain and constant fatigue.</button>
+        <div class="question" id="q15" data-correct="False" data-explanation="The text states she feels much more energetic, not constant fatigue.">
+            <p><strong>15. Maria experiences constant fatigue since changing her habits.</strong></p>
+            <button onclick="checkMCQ(15, 'True')">True</button>
+            <button onclick="checkMCQ(15, 'False')">False</button>
+            <button onclick="checkMCQ(15, 'Not Given')">Not Given</button>
             <div id="feedback-15" class="feedback"></div>
         </div>
     </div>
 
     <!-- Part 3 -->
     <div class="section" id="part3">
-        <h2>Part 3: Question Formation &amp; Answering</h2>
+        <h2>Part 3: Question Formation & Answering</h2>
 
-        <div class="question" id="q16" data-correct="A" data-explanation="Correct question formation for Present Simple passive: Question word + be + subject + past participle.">
+        <div class="question" id="q16" data-correct="A" data-explanation="Correct active question formation for Past Simple: Question word + did + subject + base verb.">
             <p><strong>16. Choose the correctly formed question:</strong></p>
-            <button onclick="checkMCQ(16, 'A')">A) Where was the new hospital built?</button>
-            <button onclick="checkMCQ(16, 'B')">B) Where did built the new hospital?</button>
-            <button onclick="checkMCQ(16, 'C')">C) Where was built the new hospital?</button>
+            <button onclick="checkMCQ(16, 'A')">A) Where did they build the new hospital?</button>
+            <button onclick="checkMCQ(16, 'B')">B) Where build they the new hospital?</button>
+            <button onclick="checkMCQ(16, 'C')">C) Where did they built the new hospital?</button>
             <div id="feedback-16" class="feedback"></div>
         </div>
 
@@ -276,99 +281,4 @@
             <p><strong>28. "The doctor advised me to make some changes," said Maria.</strong></p>
             <input type="text" id="q28-answer" placeholder="Type your answer here">
             <button id="btn-28" onclick="checkShortAnswer(28, 'Maria said the doctor had advised her to make some changes')">Check Answer</button>
-            <div id="feedback-28" class="feedback"></div>
-        </div>
-
-        <div class="question" id="q29" data-correct="Maria stated that she would continue attending yoga classes" data-explanation="The future tense with 'will' becomes 'would' in reported speech.">
-            <p><strong>29. "I will continue attending yoga classes," Maria stated.</strong></p>
-            <input type="text" id="q29-answer" placeholder="Type your answer here">
-            <button id="btn-29" onclick="checkShortAnswer(29, 'Maria stated that she would continue attending yoga classes')">Check Answer</button>
-            <div id="feedback-29" class="feedback"></div>
-        </div>
-
-        <div class="question" id="q30" data-correct="Maria confessed that she used to watch television all the time" data-explanation="'Used to' remains the same in reported speech.">
-            <p><strong>30. "I used to watch television all the time," Maria confessed.</strong></p>
-            <input type="text" id="q30-answer" placeholder="Type your answer here">
-            <button id="btn-30" onclick="checkShortAnswer(30, 'Maria confessed that she used to watch television all the time')">Check Answer</button>
-            <div id="feedback-30" class="feedback"></div>
-        </div>
-    </div>
-
-    <div id="score-board"></div>
-
-    <script>
-        let scores = {
-            1: null, 2: null, 3: null, 4: null, 5: null, 
-            6: null, 7: null, 8: null, 9: null, 10: null,
-            11: null, 12: null, 13: null, 14: null, 15: null,
-            16: null, 17: null, 18: null, 19: null, 20: null,
-            21: null, 22: null, 23: null, 24: null, 25: null,
-            26: null, 27: null, 28: null, 29: null, 30: null
-        };
-        const totalQuestions = 30;
-
-        function updateScore(qNumber, isCorrect) {
-            scores[qNumber] = isCorrect ? 1 : 0;
-            const answeredCount = Object.values(scores).filter(val => val !== null).length;
-            if (answeredCount === totalQuestions) {
-                calculateTotalScore();
-            }
-        }
-
-        function calculateTotalScore() {
-            const totalScore = Object.values(scores).reduce((acc, val) => acc + val, 0);
-            const scoreBoard = document.getElementById('score-board');
-            scoreBoard.innerHTML = `Your Final Score: ${totalScore} out of ${totalQuestions}`;
-            scoreBoard.style.display = 'block';
-        }
-
-        function processFeedback(questionNumber, isCorrect, correctText, explanation, feedbackDiv) {
-            feedbackDiv.innerHTML = isCorrect 
-                ? '<span class="correct-text">Correct!</span>'
-                : `<span class="incorrect-text">Incorrect.</span>`;
-            if (!isCorrect) {
-                 feedbackDiv.innerHTML += ` <br><strong>Expected:</strong> ${correctText}`;
-            }
-            feedbackDiv.innerHTML += `<br><br><strong>Explanation:</strong> ${explanation}`;
-            feedbackDiv.className = `feedback show ${isCorrect ? 'success' : 'error'}`;
-
-            updateScore(questionNumber, isCorrect);
-        }
-
-        function checkMCQ(questionNumber, selected) {
-            const questionDiv = document.getElementById('q' + questionNumber);
-            const correct = questionDiv.getAttribute('data-correct');
-            const explanation = questionDiv.getAttribute('data-explanation');
-            const feedbackDiv = document.getElementById('feedback-' + questionNumber);
-            const isCorrect = (selected === correct);
-
-            processFeedback(questionNumber, isCorrect, correct, explanation, feedbackDiv);
-
-            const buttons = questionDiv.querySelectorAll('button');
-            buttons.forEach(btn => {
-                btn.disabled = true;
-                const btnLetter = btn.innerText.charAt(0);
-                if (btnLetter === correct) {
-                    btn.classList.add('correct-btn');
-                } else if (btnLetter === selected && !isCorrect) {
-                    btn.classList.add('incorrect-btn');
-                }
-            });
-        }
-
-        function checkShortAnswer(questionNumber, correctText) {
-            const input = document.getElementById(`q${questionNumber}-answer`).value.trim();
-            const questionDiv = document.getElementById('q' + questionNumber);
-            const explanation = questionDiv.getAttribute('data-explanation');
-            const feedbackDiv = document.getElementById('feedback-' + questionNumber);
-
-            const isCorrect = (input.toLowerCase() === correctText.toLowerCase());
-
-            processFeedback(questionNumber, isCorrect, correctText, explanation, feedbackDiv);
-
-            document.getElementById(`q${questionNumber}-answer`).disabled = true;
-            document.getElementById(`btn-${questionNumber}`).disabled = true;
-        }
-    </script>
-</body>
-</html>
+            <div id="feedback-28" cl
